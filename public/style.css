@@ -720,7 +720,6 @@ footer {
     .faq-question { flex-direction: column; gap: 16px; }
     .faq-number { font-size: 36px; }
     .faq-answer { padding-left: 0; }
-
 }
 
 /* --- Mobile Phone Frame for Demo Modal --- */
