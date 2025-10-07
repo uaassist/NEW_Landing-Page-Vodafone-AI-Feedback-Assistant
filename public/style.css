@@ -722,8 +722,7 @@ footer {
     .faq-answer { padding-left: 0; }
 }
 
-
-/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL --- */
+/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL (UPDATED with Refresh Button) --- */
 
 /* Target the specific demo modals to override default styles */
 .modal.demo-modal .modal-content {
@@ -735,7 +734,7 @@ footer {
     height: 85vh;
     max-height: 800px; /* Adjust max height of the phone */
     padding: 0;
-    overflow: visible; /* Allows the close button to be positioned outside */
+    overflow: visible; /* Allows the control buttons to be positioned outside */
 }
 
 /* The modal-body now acts as the phone frame itself */
@@ -764,18 +763,49 @@ footer {
     display: none;
 }
 
-/* Reposition the close button to be outside and above the phone frame */
-.modal.demo-modal .modal-close {
+/* Container for both refresh and close buttons */
+.modal-controls {
     position: absolute;
-    /* Position relative to the .modal-content container */
     top: -55px;
     right: 0;
     z-index: 10001;
+    display: flex;
+    gap: 12px;
+}
+
+/* Shared styles for both control buttons */
+.modal-controls button {
     background: rgba(40, 40, 40, 0.7);
     backdrop-filter: blur(5px);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
 }
-.modal.demo-modal .modal-close:hover {
+
+/* Specific style for close button */
+.modal-close {
+    font-size: 24px;
+    line-height: 1;
+}
+.modal-close:hover {
     background: var(--vodafone-red);
+    transform: rotate(90deg);
+}
+
+/* Specific style for refresh button */
+.modal-refresh:hover {
+    background: var(--kyivstar-blue); /* Using a different color for distinction */
+    transform: rotate(-180deg);
+}
+.modal-controls button svg {
+    transition: transform 0.3s;
 }
 
 /* Responsive adjustments for the phone frame on smaller screens */
@@ -784,10 +814,12 @@ footer {
         width: 90%;
         height: 80vh;
     }
-    .modal.demo-modal .modal-close {
+    .modal-controls {
         top: 0;
         right: 0;
         transform: translate(0, -120%); /* Position it cleanly above the frame */
+    }
+    .modal-controls button {
         background: rgba(255,255,255,0.1);
     }
 }
