@@ -722,86 +722,72 @@ footer {
     .faq-answer { padding-left: 0; }
 }
 
-/* --- Mobile Phone Frame for Demo Modal --- */
+
+/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL --- */
+
+/* Target the specific demo modals to override default styles */
+.modal.demo-modal .modal-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 90%;
+    max-width: 400px; /* Adjust max width of the phone */
+    height: 85vh;
+    max-height: 800px; /* Adjust max height of the phone */
+    padding: 0;
+    overflow: visible; /* Allows the close button to be positioned outside */
+}
+
+/* The modal-body now acts as the phone frame itself */
+.modal.demo-modal .modal-body {
+    background: #ffffff; /* The white content area */
+    border-radius: 44px; /* Generous rounding for a modern phone look */
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden; /* Crucial to clip the iframe's corners */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    border: 8px solid #1c1c1e; /* A dark border to simulate the phone's chassis */
+    box-sizing: border-box;
+}
+
+.modal.demo-modal .modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* The iframe corners are clipped by the parent's overflow:hidden */
+}
+
+/* Hide the original header and footer for the demo modal */
+.modal.demo-modal .modal-header,
+.modal.demo-modal .modal-footer {
+    display: none;
+}
+
+/* Reposition the close button to be outside and above the phone frame */
+.modal.demo-modal .modal-close {
+    position: absolute;
+    /* Position relative to the .modal-content container */
+    top: -55px;
+    right: 0;
+    z-index: 10001;
+    background: rgba(40, 40, 40, 0.7);
+    backdrop-filter: blur(5px);
+}
+.modal.demo-modal .modal-close:hover {
+    background: var(--vodafone-red);
+}
+
+/* Responsive adjustments for the phone frame on smaller screens */
 @media (max-width: 768px) {
-    /* Hide the original header and footer in the mobile demo view */
-    .modal-header,
-    .modal-footer {
-        display: none;
+    .modal.demo-modal .modal-content {
+        width: 90%;
+        height: 80vh;
     }
-
-    /* Style the modal content to be the phone's outer frame */
-    .modal-content {
-        width: 95%;
-        max-width: 420px; /* A good max width for a phone frame */
-        height: 90vh; /* Use vh to be responsive to screen height */
-        max-height: 880px;
-        
-        background: #1c1c1e; /* A dark phone body color */
-        border-radius: 54px; /* Generous radius for a modern phone look */
-        border: 4px solid #444;
-        padding: 16px; /* This creates the bezels around the screen */
-        
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7), inset 0 0 2px rgba(255,255,255,0.1); /* Add depth and an inner highlight */
-        
-        /* Use flexbox to manage the content inside the frame */
-        display: flex;
-        flex-direction: column;
-        
-        /* Ensure it's positioned correctly for pseudo-elements */
-        position: relative;
-        overflow: hidden; /* Hide anything that might stick out */
-    }
-
-    /* Make the body (screen area) fill the frame */
-    .modal-body {
-        flex-grow: 1; /* Allows the body to fill the available space */
-        padding: 0;
-        background: #000; /* Black background behind the iframe */
-        border-radius: 38px; /* Slightly smaller radius than the frame */
-        overflow: hidden; /* Crucial to clip the iframe's corners */
-        position: relative; /* For z-indexing against the notch */
-        z-index: 1;
-    }
-
-    /* Make the iframe fill the screen area */
-    .modal-iframe {
-        width: 100%;
-        height: 100%; /* Fill the modal-body */
-        background: #fff; /* Set a default background for the iframe content */
-    }
-    
-    /* Create the camera/sensor notch */
-    .modal-content::before {
-        content: '';
-        position: absolute;
-        top: 16px; /* Match the padding */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-        max-width: 200px;
-        height: 30px;
-        background: #1c1c1e; /* Same as the phone body */
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        z-index: 2; /* Must be on top of the iframe screen */
-        border-bottom: 3px solid #444; /* Match frame border */
-        border-left: 3px solid #444;
-        border-right: 3px solid #444;
-    }
-
-    /* Create the home/gesture bar */
-    .modal-content::after {
-        content: '';
-        position: absolute;
-        bottom: 28px; /* Position it within the bottom bezel */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 35%;
-        max-width: 140px;
-        height: 5px;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 10px;
-        z-index: 2; /* On top of the screen */
+    .modal.demo-modal .modal-close {
+        top: 0;
+        right: 0;
+        transform: translate(0, -120%); /* Position it cleanly above the frame */
+        background: rgba(255,255,255,0.1);
     }
 }
