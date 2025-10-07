@@ -635,49 +635,31 @@
         </div>
     </footer>
 
-    <!-- Demo Modals -->
+    <!-- Demo Modals: UPDATED STRUCTURE with REFRESH button -->
     <div id="demoModal1" class="modal demo-modal">
         <div class="modal-content">
-            <!-- Close button moved here for better positioning -->
-            <button class="modal-close" onclick="closeModal('demoModal1')">×</button>
-            <div class="modal-header">
-                <h3>AI Review Generator - Інтерактивне Демо</h3>
+            <div class="modal-controls">
+                <button class="modal-refresh" onclick="refreshModalIframe('demoModal1')" title="Restart Demo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+                </button>
+                <button class="modal-close" onclick="closeModal('demoModal1')" title="Close">×</button>
             </div>
             <div class="modal-body">
                 <iframe class="modal-iframe" src="https://vodafone-ai-review-assistant.netlify.app/" title="AI Review Generator Demo"></iframe>
-            </div>
-            <div class="modal-footer">
-                <a href="https://vodafone-ai-review-assistant.netlify.app/" target="_blank" class="modal-link">
-                    Відкрити у повному розмірі
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
             </div>
         </div>
     </div>
 
     <div id="demoModal2" class="modal demo-modal">
         <div class="modal-content">
-            <!-- Close button moved here for better positioning -->
-            <button class="modal-close" onclick="closeModal('demoModal2')">×</button>
-            <div class="modal-header">
-                <h3>AI Response Engine - Інтерактивне Демо</h3>
+             <div class="modal-controls">
+                <button class="modal-refresh" onclick="refreshModalIframe('demoModal2')" title="Restart Demo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+                </button>
+                <button class="modal-close" onclick="closeModal('demoModal2')" title="Close">×</button>
             </div>
             <div class="modal-body">
                 <iframe class="modal-iframe" src="https://demo.liketo.me/" title="AI Response Engine Demo"></iframe>
-            </div>
-            <div class="modal-footer">
-                <a href="https://demo.liketo.me/" target="_blank" class="modal-link">
-                    Відкрити у повному розмірі
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
             </div>
         </div>
     </div>
