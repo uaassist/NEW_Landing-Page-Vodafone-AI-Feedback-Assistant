@@ -809,31 +809,27 @@ footer {
 .modal.active {
     display: flex;
 }
-/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL (UPDATED with Refresh Button) --- */
-
-/* Target the specific demo modals to override default styles */
 .modal.demo-modal .modal-content {
     background: transparent;
     border: none;
     box-shadow: none;
     width: 90%;
-    max-width: 400px; /* Adjust max width of the phone */
+    max-width: 400px;
     height: 85vh;
-    max-height: 800px; /* Adjust max height of the phone */
+    max-height: 800px;
     padding: 0;
-    overflow: visible; /* Allows the control buttons to be positioned outside */
+    overflow: visible;
 }
 
-/* The modal-body now acts as the phone frame itself */
 .modal.demo-modal .modal-body {
-    background: #ffffff; /* The white content area */
-    border-radius: 44px; /* Generous rounding for a modern phone look */
+    background: #ffffff;
+    border-radius: 44px;
     width: 100%;
     height: 100%;
     padding: 0;
-    overflow: hidden; /* Crucial to clip the iframe's corners */
+    overflow: hidden;
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-    border: 8px solid #1c1c1e; /* A dark border to simulate the phone's chassis */
+    border: 8px solid #1c1c1e;
     box-sizing: border-box;
 }
 
@@ -841,16 +837,13 @@ footer {
     width: 100%;
     height: 100%;
     border: none;
-    /* The iframe corners are clipped by the parent's overflow:hidden */
 }
 
-/* Hide the original header and footer for the demo modal */
 .modal.demo-modal .modal-header,
 .modal.demo-modal .modal-footer {
     display: none;
 }
 
-/* Container for both refresh and close buttons */
 .modal-controls {
     position: absolute;
     top: -55px;
@@ -860,7 +853,6 @@ footer {
     gap: 12px;
 }
 
-/* Shared styles for both control buttons */
 .modal-controls button {
     background: rgba(40, 40, 40, 0.7);
     backdrop-filter: blur(5px);
@@ -876,7 +868,6 @@ footer {
     transition: all 0.3s;
 }
 
-/* Specific style for close button */
 .modal-close {
     font-size: 24px;
     line-height: 1;
@@ -886,16 +877,32 @@ footer {
     transform: rotate(90deg);
 }
 
-/* Specific style for refresh button */
 .modal-refresh:hover {
-    background: var(--kyivstar-blue); /* Using a different color for distinction */
+    background: var(--kyivstar-blue);
     transform: rotate(-180deg);
 }
 .modal-controls button svg {
     transition: transform 0.3s;
 }
 
-/* Responsive adjustments for the phone frame on smaller screens */
+@media (max-width: 968px) {
+    h1 { font-size: 42px; }
+    .three-col-grid, .insight-cards, .cost-grid, .features-grid, .approach-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 30px; }
+    .timeline-marker { width: 60px; height: 60px; font-size: 24px; }
+    .faq-question { 
+        align-items: flex-start;
+        flex-direction: row; 
+    }
+    .faq-number { 
+        font-size: 36px; 
+    }
+    .faq-answer { 
+        padding-left: 0; 
+        margin-top: -16px;
+    }
+}
+
 @media (max-width: 768px) {
     .modal.demo-modal .modal-content {
         width: 90%;
@@ -904,7 +911,7 @@ footer {
     .modal-controls {
         top: 0;
         right: 0;
-        transform: translate(0, -120%); /* Position it cleanly above the frame */
+        transform: translate(0, -120%);
     }
     .modal-controls button {
         background: rgba(255,255,255,0.1);
