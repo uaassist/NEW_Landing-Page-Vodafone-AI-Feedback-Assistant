@@ -814,7 +814,7 @@ footer {
     border: none;
     box-shadow: none;
     width: 90%;
-    max-width: 600px;
+    max-width: 500px;
     height: 85vh;
     max-height: 800px;
     padding: 0;
@@ -918,5 +918,6 @@ footer {
         background: rgba(255,255,255,0.1);
     }
 }
+
 
 
