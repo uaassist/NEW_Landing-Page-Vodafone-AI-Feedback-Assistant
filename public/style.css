@@ -809,27 +809,34 @@ footer {
 .modal.active {
     display: flex;
 }
+/* ... (all your existing styles remain the same) ... */
+
+
+/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL (UPDATED with Refresh Button) --- */
+
+/* Target the specific demo modals to override default styles */
 .modal.demo-modal .modal-content {
     background: transparent;
     border: none;
     box-shadow: none;
     width: 90%;
-    max-width: 400px;
+    max-width: 400px; /* Adjust max width of the phone */
     height: 85vh;
-    max-height: 800px;
+    max-height: 800px; /* Adjust max height of the phone */
     padding: 0;
-    overflow: visible;
+    overflow: visible; /* Allows the control buttons to be positioned outside */
 }
 
+/* The modal-body now acts as the phone frame itself */
 .modal.demo-modal .modal-body {
-    background: #ffffff;
-    border-radius: 44px;
+    background: #ffffff; /* The white content area */
+    border-radius: 44px; /* Generous rounding for a modern phone look */
     width: 100%;
     height: 100%;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Crucial to clip the iframe's corners */
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-    border: 8px solid #1c1c1e;
+    border: 8px solid #1c1c1e; /* A dark border to simulate the phone's chassis */
     box-sizing: border-box;
 }
 
@@ -837,13 +844,16 @@ footer {
     width: 100%;
     height: 100%;
     border: none;
+    /* The iframe corners are clipped by the parent's overflow:hidden */
 }
 
+/* Hide the original header and footer for the demo modal */
 .modal.demo-modal .modal-header,
 .modal.demo-modal .modal-footer {
     display: none;
 }
 
+/* Container for both refresh and close buttons */
 .modal-controls {
     position: absolute;
     top: -55px;
@@ -853,6 +863,7 @@ footer {
     gap: 12px;
 }
 
+/* Shared styles for both control buttons */
 .modal-controls button {
     background: rgba(40, 40, 40, 0.7);
     backdrop-filter: blur(5px);
@@ -868,6 +879,7 @@ footer {
     transition: all 0.3s;
 }
 
+/* Specific style for close button */
 .modal-close {
     font-size: 24px;
     line-height: 1;
@@ -877,32 +889,16 @@ footer {
     transform: rotate(90deg);
 }
 
+/* Specific style for refresh button */
 .modal-refresh:hover {
-    background: var(--kyivstar-blue);
+    background: var(--kyivstar-blue); /* Using a different color for distinction */
     transform: rotate(-180deg);
 }
 .modal-controls button svg {
     transition: transform 0.3s;
 }
 
-@media (max-width: 968px) {
-    h1 { font-size: 42px; }
-    .three-col-grid, .insight-cards, .cost-grid, .features-grid, .approach-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 30px; }
-    .timeline-marker { width: 60px; height: 60px; font-size: 24px; }
-    .faq-question { 
-        align-items: flex-start;
-        flex-direction: row; 
-    }
-    .faq-number { 
-        font-size: 36px; 
-    }
-    .faq-answer { 
-        padding-left: 0; 
-        margin-top: -16px;
-    }
-}
-
+/* Responsive adjustments for the phone frame on smaller screens */
 @media (max-width: 768px) {
     .modal.demo-modal .modal-content {
         width: 90%;
@@ -911,7 +907,7 @@ footer {
     .modal-controls {
         top: 0;
         right: 0;
-        transform: translate(0, -120%);
+        transform: translate(0, -120%); /* Position it cleanly above the frame */
     }
     .modal-controls button {
         background: rgba(255,255,255,0.1);
