@@ -379,54 +379,6 @@ section { padding: 80px 0; position: relative; }
     z-index: 1;
 }
 
-.cost-section {
-    background: linear-gradient(180deg, #141414, #0a0a0a);
-    position: relative;
-}
-.cost-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(230,0,0,0.1), transparent 70%);
-    pointer-events: none;
-}
-
-.cost-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 32px; 
-    margin-top: 60px; 
-}
-.cost-card { 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
-    padding: 48px; 
-    border-radius: 24px; 
-    border: 1px solid rgba(255,255,255,0.08);
-    position: relative;
-    overflow: hidden;
-}
-.cost-card::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(230,0,0,0.1), transparent 70%);
-    pointer-events: none;
-}
-.cost-amount { 
-    font-size: 64px; 
-    font-weight: 900; 
-    background: linear-gradient(135deg, var(--vodafone-red), #ff4444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 24px 0; 
-}
-
 .features-grid { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -480,6 +432,39 @@ section { padding: 80px 0; position: relative; }
     z-index: 1;
 }
 
+.feature-highlight-box {
+    background: rgba(230, 0, 0, 0.1);
+    border-left: 3px solid var(--vodafone-red);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.feature-highlight-box h4 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.feature-highlight-box p {
+    color: #c0c0c0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    position: static;
+    z-index: auto;
+}
+
+.feature-description {
+    margin-bottom: 24px;
+}
+
+.feature-card .demo-button {
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
 .demo-button {
     display: inline-flex;
     align-items: center;
@@ -503,93 +488,95 @@ section { padding: 80px 0; position: relative; }
     box-shadow: 0 8px 24px rgba(230,0,0,0.4);
 }
 
-.modal {
-    display: none;
-    position: fixed;
+.approach-section {
+    padding-top: 40px; 
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.approach-card {
+    background: linear-gradient(135deg, rgba(26,26,26,0.5), rgba(20,20,20,0.5));
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, rgba(30,30,30,0.8), rgba(24,24,24,0.8));
+    border-color: rgba(230, 0, 0, 0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.approach-icon {
+    margin-bottom: 24px;
+}
+
+.approach-card h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.approach-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #a0a0a0;
+}
+
+.cost-section {
+    background: linear-gradient(180deg, #141414, #0a0a0a);
+    position: relative;
+}
+.cost-section::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(230,0,0,0.1), transparent 70%);
+    pointer-events: none;
 }
-.modal.active {
-    display: flex;
+
+.cost-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px; 
+    margin-top: 60px; 
 }
-.modal-content {
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-    border-radius: 24px;
-    width: 90%;
-    max-width: 1200px;
-    max-height: 90vh;
+.cost-card { 
+    background: linear-gradient(135deg, #1a1a1a, #141414); 
+    padding: 48px; 
+    border-radius: 24px; 
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
     overflow: hidden;
-    border: 1px solid rgba(230,0,0,0.3);
-    box-shadow: 0 20px 80px rgba(0,0,0,0.8);
-    position: relative;
 }
-.modal-header {
-    padding: 24px 32px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.cost-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(230,0,0,0.1), transparent 70%);
+    pointer-events: none;
 }
-.modal-header h3 {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-}
-.modal-close {
-    background: rgba(255,255,255,0.1);
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-.modal-close:hover {
-    background: var(--vodafone-red);
-    transform: rotate(90deg);
-}
-.modal-body {
-    padding: 0;
-    position: relative;
-}
-.modal-iframe {
-    width: 100%;
-    height: 70vh;
-    border: none;
-    background: #000;
-}
-.modal-footer {
-    padding: 20px 32px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: center;
-}
-.modal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--vodafone-red);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.3s;
-}
-.modal-link:hover {
-    color: #ff4444;
-    gap: 12px;
+.cost-amount { 
+    font-size: 64px; 
+    font-weight: 900; 
+    background: linear-gradient(135deg, var(--vodafone-red), #ff4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 24px 0; 
 }
 
 .faq-section {
@@ -624,7 +611,7 @@ section { padding: 80px 0; position: relative; }
 .faq-answer { padding-left: 72px; color: #b0b0b0; font-size: 16px; line-height: 1.7; }
 .faq-answer p { margin-bottom: 12px; }
 .faq-answer strong { color: #ffffff; font-weight: 600; }
-.faq-answer ul li { margin-bottom: 12px; line-height: 1.6; }
+.faq-answer ul li, .faq-answer ol li { margin-bottom: 12px; line-height: 1.6; }
 
 .timeline-section {
     background: linear-gradient(180deg, #141414, #0a0a0a);
@@ -712,41 +699,43 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-@media (max-width: 968px) {
-    h1 { font-size: 42px; }
-    .three-col-grid, .insight-cards, .cost-grid, .features-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 30px; }
-    .timeline-marker { width: 60px; height: 60px; font-size: 24px; }
-    .faq-question { flex-direction: column; gap: 16px; }
-    .faq-number { font-size: 36px; }
-    .faq-answer { padding-left: 0; }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
 }
-
-/* --- ADDITIONS FOR MOBILE FRAME DEMO MODAL (UPDATED with Refresh Button) --- */
-
-/* Target the specific demo modals to override default styles */
+.modal.active {
+    display: flex;
+}
 .modal.demo-modal .modal-content {
     background: transparent;
     border: none;
     box-shadow: none;
     width: 90%;
-    max-width: 400px; /* Adjust max width of the phone */
+    max-width: 400px;
     height: 85vh;
-    max-height: 800px; /* Adjust max height of the phone */
+    max-height: 800px;
     padding: 0;
-    overflow: visible; /* Allows the control buttons to be positioned outside */
+    overflow: visible;
 }
 
-/* The modal-body now acts as the phone frame itself */
 .modal.demo-modal .modal-body {
-    background: #ffffff; /* The white content area */
-    border-radius: 44px; /* Generous rounding for a modern phone look */
+    background: #ffffff;
+    border-radius: 44px;
     width: 100%;
     height: 100%;
     padding: 0;
-    overflow: hidden; /* Crucial to clip the iframe's corners */
+    overflow: hidden;
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-    border: 8px solid #1c1c1e; /* A dark border to simulate the phone's chassis */
+    border: 8px solid #1c1c1e;
     box-sizing: border-box;
 }
 
@@ -754,16 +743,13 @@ footer {
     width: 100%;
     height: 100%;
     border: none;
-    /* The iframe corners are clipped by the parent's overflow:hidden */
 }
 
-/* Hide the original header and footer for the demo modal */
 .modal.demo-modal .modal-header,
 .modal.demo-modal .modal-footer {
     display: none;
 }
 
-/* Container for both refresh and close buttons */
 .modal-controls {
     position: absolute;
     top: -55px;
@@ -773,7 +759,6 @@ footer {
     gap: 12px;
 }
 
-/* Shared styles for both control buttons */
 .modal-controls button {
     background: rgba(40, 40, 40, 0.7);
     backdrop-filter: blur(5px);
@@ -789,7 +774,6 @@ footer {
     transition: all 0.3s;
 }
 
-/* Specific style for close button */
 .modal-close {
     font-size: 24px;
     line-height: 1;
@@ -799,16 +783,24 @@ footer {
     transform: rotate(90deg);
 }
 
-/* Specific style for refresh button */
 .modal-refresh:hover {
-    background: var(--kyivstar-blue); /* Using a different color for distinction */
+    background: var(--kyivstar-blue);
     transform: rotate(-180deg);
 }
 .modal-controls button svg {
     transition: transform 0.3s;
 }
 
-/* Responsive adjustments for the phone frame on smaller screens */
+@media (max-width: 968px) {
+    h1 { font-size: 42px; }
+    .three-col-grid, .insight-cards, .cost-grid, .features-grid, .approach-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 30px; }
+    .timeline-marker { width: 60px; height: 60px; font-size: 24px; }
+    .faq-question { flex-direction: column; gap: 16px; }
+    .faq-number { font-size: 36px; }
+    .faq-answer { padding-left: 0; }
+}
+
 @media (max-width: 768px) {
     .modal.demo-modal .modal-content {
         width: 90%;
@@ -817,47 +809,7 @@ footer {
     .modal-controls {
         top: 0;
         right: 0;
-        transform: translate(0, -120%); /* Position it cleanly above the frame */
-    }
-    .modal-controls button {
+        transform: translate(0, -120%);
         background: rgba(255,255,255,0.1);
     }
 }
-/* ... (всі ваші існуючі стилі) ... */
-
-/* --- ДОДАТКОВІ СТИЛІ ДЛЯ ОНОВЛЕНОЇ КАРТКИ "AI Review Generator" --- */
-
-.feature-highlight-box {
-    background: rgba(230, 0, 0, 0.1);
-    border-left: 3px solid var(--vodafone-red);
-    border-radius: 8px;
-    padding: 24px;
-    margin: 24px 0;
-}
-
-.feature-highlight-box h4 {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 12px 0;
-}
-
-.feature-highlight-box p {
-    color: #c0c0c0;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    position: static; /* Перевизначаємо позиціонування для цього конкретного параграфа */
-    z-index: auto;
-}
-
-.feature-description {
-    margin-bottom: 24px;
-}
-
-/* Опціонально: робимо demo-button трохи більшою, як на макеті */
-.feature-card .demo-button {
-    padding: 14px 28px;
-    font-size: 16px;
-}
-
