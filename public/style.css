@@ -823,4 +823,41 @@ footer {
         background: rgba(255,255,255,0.1);
     }
 }
+/* ... (всі ваші існуючі стилі) ... */
+
+/* --- ДОДАТКОВІ СТИЛІ ДЛЯ ОНОВЛЕНОЇ КАРТКИ "AI Review Generator" --- */
+
+.feature-highlight-box {
+    background: rgba(230, 0, 0, 0.1);
+    border-left: 3px solid var(--vodafone-red);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.feature-highlight-box h4 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.feature-highlight-box p {
+    color: #c0c0c0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    position: static; /* Перевизначаємо позиціонування для цього конкретного параграфа */
+    z-index: auto;
+}
+
+.feature-description {
+    margin-bottom: 24px;
+}
+
+/* Опціонально: робимо demo-button трохи більшою, як на макеті */
+.feature-card .demo-button {
+    padding: 14px 28px;
+    font-size: 16px;
+}
 
