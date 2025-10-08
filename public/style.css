@@ -1,872 +1,102 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --vodafone-red: #E60000;
-    --kyivstar-blue: #0066CC;
-    --lifecell-yellow: #FFC40C;
-    --lifecell-blue: #143254;
-    --success-green: #00D66F;
-}
-
-body { 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6; 
-    color: #a0a0a0; 
-    background: #0a0a0a;
-}
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-.alert-bar { 
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f); 
-    border-bottom: 1px solid rgba(230,0,0,0.3);
-    color: white; 
-    padding: 16px; 
-    text-align: center; 
-    font-weight: 500; 
-    font-size: 14px; 
-}
-
-header { 
-    background: linear-gradient(180deg, rgba(20,20,20,0.98), rgba(10,10,10,0.95));
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.08); 
-    padding: 20px 0; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-}
-.header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo img { height: 32px; }
-
-.cta-button { 
-    background: linear-gradient(135deg, var(--vodafone-red), #b80000); 
-    color: white; 
-    padding: 14px 32px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: 700; 
-    box-shadow: 0 4px 24px rgba(230,0,0,0.5); 
-    transition: all 0.3s; 
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.cta-button:hover { 
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 32px rgba(230,0,0,0.7); 
-}
-
-.hero-section { 
-    padding: 100px 0 80px; 
-    background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
-    position: relative;
-    overflow: hidden;
-}
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(230,0,0,0.15), transparent 70%);
-    pointer-events: none;
-}
-.crisis-badge { 
-    display: inline-block; 
-    background: linear-gradient(135deg, rgba(230,0,0,0.2), rgba(192,0,0,0.05)); 
-    border: 2px solid var(--vodafone-red); 
-    color: #ff4444; 
-    padding: 12px 24px; 
-    border-radius: 100px; 
-    font-weight: 700; 
-    margin-bottom: 32px;
-    box-shadow: 0 0 40px rgba(230,0,0,0.3);
-    position: relative;
-    z-index: 1;
-}
-h1 { 
-    font-size: 64px; 
-    line-height: 1.1; 
-    font-weight: 900; 
-    margin-bottom: 32px; 
-    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
-    z-index: 1;
-}
-.hero-subtitle { 
-    font-size: 22px; 
-    color: #b0b0b0; 
-    margin-bottom: 48px; 
-    line-height: 1.6; 
-    position: relative;
-    z-index: 1;
-}
-.hero-subtitle strong {
-    color: #ffffff;
-}
-
-section { padding: 80px 0; position: relative; }
-
-.dark-gradient-bg {
-    background: linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
-}
-
-.section-title { 
-    font-size: 48px; 
-    font-weight: 900; 
-    text-align: center; 
-    margin-bottom: 16px; 
-    background: linear-gradient(135deg, #ffffff 0%, #999999 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.section-subtitle { 
-    font-size: 20px; 
-    color: #808080; 
-    text-align: center; 
-    margin-bottom: 60px; 
-}
-
-.three-col-grid {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 2px; 
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f); 
-    border-radius: 24px; 
-    overflow: hidden; 
-    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.brand-column { 
-    background: linear-gradient(180deg, #1a1a1a, #141414); 
-    padding: 48px 32px; 
-    position: relative;
-}
-.brand-column::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: radial-gradient(ellipse at top, rgba(255,255,255,0.03), transparent);
-    pointer-events: none;
-}
-.brand-header { text-align: center; margin-bottom: 40px; position: relative; z-index: 1; }
-.brand-badge { 
-    display: inline-flex; 
-    align-items: center; 
-    gap: 12px; 
-    padding: 16px 32px; 
-    border-radius: 16px; 
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4); 
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.brand-badge.vodafone { background: linear-gradient(135deg, var(--vodafone-red), #a00000); }
-.brand-badge.kyivstar { background: linear-gradient(135deg, var(--kyivstar-blue), #004499); }
-.brand-badge.lifecell-badge { background: linear-gradient(135deg, var(--lifecell-blue), #0a1a28); }
-.brand-name { font-size: 24px; font-weight: 900; color: white; }
-
-.location-card { 
-    background: linear-gradient(135deg, #1f1f1f, #1a1a1a); 
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4); 
-    margin-bottom: 16px; 
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.3s;
-    position: relative;
-}
-.location-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="%234285F4" d="M24 4C15.2 4 8 11.2 8 20c0 10 12 24 16 24s16-14 16-24c0-8.8-7.2-16-16-16z"/><circle fill="white" cx="24" cy="20" r="7"/></svg>') no-repeat center;
-    background-size: 24px;
-    opacity: 0.15;
-    pointer-events: none;
-}
-.location-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    border-color: rgba(66,133,244,0.3);
-}
-.location-card.vodafone { 
-    border-left: 4px solid var(--vodafone-red);
-}
-.location-card.kyivstar { 
-    border-left: 4px solid #4285F4;
-}
-.location-card.lifecell { 
-    border-left: 4px solid var(--lifecell-yellow);
-}
-.location-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    margin-bottom: 14px; 
-}
-.location-name { 
-    font-weight: 700; 
-    font-size: 15px; 
-    color: #ffffff; 
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.location-name::before {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234285F4"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>') no-repeat center;
-    background-size: contain;
-    flex-shrink: 0;
-}
-.review-count { 
-    font-size: 12px; 
-    padding: 4px 10px; 
-    border-radius: 6px; 
-    background: rgba(66,133,244,0.15); 
-    color: #8ab4f8;
-    font-weight: 600;
-}
-.rating-display { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-.rating-number { 
-    font-size: 28px; 
-    font-weight: 900; 
-    line-height: 1; 
-}
-.rating-number.bad { 
-    background: linear-gradient(135deg, #ff4444, #cc0000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.rating-number.good { 
-    background: linear-gradient(135deg, #0088ff, #0055cc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.rating-number.lifecell-rating {
-    background: linear-gradient(135deg, var(--lifecell-yellow), #e0a000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.stars { color: #FFB800; font-size: 18px; }
-
-.summary-box {
-    text-align: center; 
-    margin-top: 20px; 
-    padding: 20px; 
-    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); 
-    border-radius: 12px; 
-    border: 2px dashed rgba(255,255,255,0.1);
-}
-
-.impact-banner { 
-    background: linear-gradient(135deg, #1a1a1a, #0f0f0f); 
-    color: white; 
-    padding: 40px; 
-    text-align: center; 
-    border-radius: 24px; 
-    margin-top: 40px; 
-    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
-    border: 1px solid rgba(230,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-}
-.impact-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(230,0,0,0.15), transparent 70%);
-    pointer-events: none;
-}
-.impact-stats { 
-    display: flex; 
-    justify-content: center; 
-    gap: 48px; 
-    flex-wrap: wrap; 
-    margin-top: 24px; 
-    position: relative;
-    z-index: 1;
-}
-.impact-value { 
-    font-size: 48px; 
-    font-weight: 900; 
-    margin-top: 8px;
-    background: linear-gradient(135deg, var(--vodafone-red), #ff4444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.insight-cards { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 32px; 
-    margin-top: 60px; 
-}
-.insight-card { 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
-    padding: 40px; 
-    border-radius: 20px; 
-    border: 1px solid rgba(255,255,255,0.08); 
-    transition: all 0.3s; 
-    position: relative;
-    overflow: hidden;
-}
-.insight-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(230,0,0,0.05), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.insight-card:hover::before {
-    opacity: 1;
-}
-.insight-card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 20px 60px rgba(230,0,0,0.3); 
-    border-color: var(--vodafone-red); 
-}
-.insight-icon { 
-    width: 56px; 
-    height: 56px; 
-    margin-bottom: 24px; 
-    position: relative;
-    z-index: 1;
-}
-.insight-card h3 {
-    color: #ffffff;
-    font-size: 20px;
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-}
-.insight-metric { 
-    font-size: 40px; 
-    font-weight: 900; 
-    background: linear-gradient(135deg, var(--vodafone-red), #ff4444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 16px 0; 
-    position: relative;
-    z-index: 1;
-}
-.insight-card p {
-    position: relative;
-    z-index: 1;
-}
-
-.features-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 32px; 
-    margin-top: 60px; 
-}
-.feature-card { 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
-    padding: 48px; 
-    border-radius: 20px; 
-    border: 1px solid rgba(255,255,255,0.08); 
-    transition: all 0.3s; 
-    position: relative;
-    overflow: hidden;
-}
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(230,0,0,0.08), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.feature-card:hover::before {
-    opacity: 1;
-}
-.feature-card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 24px 64px rgba(230,0,0,0.3); 
-    border-color: var(--vodafone-red); 
-}
-.feature-icon { 
-    width: 64px; 
-    height: 64px; 
-    margin-bottom: 24px; 
-    transition: transform 0.3s; 
-    position: relative;
-    z-index: 1;
-}
-.feature-card:hover .feature-icon { transform: scale(1.1); }
-.feature-card h3 {
-    color: #ffffff;
-    position: relative;
-    z-index: 1;
-}
-.feature-card p {
-    position: relative;
-    z-index: 1;
-}
-
-.feature-highlight-box {
-    background: rgba(230, 0, 0, 0.1);
-    border-left: 3px solid var(--vodafone-red);
-    border-radius: 8px;
-    padding: 24px;
-    margin: 24px 0;
-}
-
-.feature-highlight-box h4 {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 12px 0;
-}
-
-.feature-highlight-box p {
-    color: #c0c0c0;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    position: static;
-    z-index: auto;
-}
-
-.feature-description {
-    margin-bottom: 24px;
-}
-
-.feature-card .demo-button {
-    padding: 14px 28px;
-    font-size: 16px;
-}
-
-.demo-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, var(--vodafone-red), #c00000);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 20px;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-}
-.demo-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(230,0,0,0.4);
-}
-
-/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ СЕКЦІЇ "ЯК ПРАЦЮЄ НАШ ШІ" --- */
-
-/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ СЕКЦІЇ "ЯК ПРАЦЮЄ НАШ ШІ" (Новий дизайн) --- */
-
-.approach-section {
-    padding-top: 40px; 
-    position: relative;
-    overflow: hidden;
-}
-
-.approach-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 1000px;
-    background: radial-gradient(circle, rgba(230, 0, 0, 0.05), transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.approach-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
-}
-
-.approach-card {
-    background: #111111;
-    padding: 40px;
-    border-radius: 16px;
-    border: 1px solid #282828;
-    border-left: 4px solid var(--vodafone-red);
-    text-align: left; /* Вирівнювання по лівому краю */
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-}
-
-.approach-card:hover {
-    transform: translateY(-10px);
-    border-color: #333;
-    border-left-color: #ff4444;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-}
-
-.approach-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    margin-bottom: 32px;
-    background: #1f1f1f;
-    border: 1px solid #333;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-}
-
-.approach-icon svg {
-    width: 32px;
-    height: 32px;
-    stroke: #888; /* Нейтральний сірий колір за замовчуванням */
-    transition: stroke 0.3s ease-in-out;
-}
-
-.approach-card:hover .approach-icon {
-    background: rgba(230, 0, 0, 0.1);
-    border-color: var(--vodafone-red);
-}
-
-.approach-card:hover .approach-icon svg {
-    stroke: var(--vodafone-red); /* Червоний колір при наведенні */
-}
-
-.approach-card h3 {
-    color: #f0f0f0;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 16px;
-}
-
-.approach-card p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #999;
-}
-
-@media (max-width: 968px) {
-    .approach-grid {
-        grid-template-columns: 1fr;
-    }
-}  }
-}
-.cost-section {
-    background: linear-gradient(180deg, #141414, #0a0a0a);
-    position: relative;
-}
-.cost-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(230,0,0,0.1), transparent 70%);
-    pointer-events: none;
-}
-
-.cost-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 32px; 
-    margin-top: 60px; 
-}
-.cost-card { 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
-    padding: 48px; 
-    border-radius: 24px; 
-    border: 1px solid rgba(255,255,255,0.08);
-    position: relative;
-    overflow: hidden;
-}
-.cost-card::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(230,0,0,0.1), transparent 70%);
-    pointer-events: none;
-}
-.cost-amount { 
-    font-size: 64px; 
-    font-weight: 900; 
-    background: linear-gradient(135deg, var(--vodafone-red), #ff4444);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 24px 0; 
-}
+/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ СЕКЦІЇ FAQ --- */
 
 .faq-section {
     background: linear-gradient(180deg, #0a0a0a, #141414, #0a0a0a);
 }
 
 .faq-item { 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
+    background: #111111;
     border-radius: 20px; 
     padding: 40px; 
     margin-bottom: 24px; 
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3); 
-    transition: all 0.3s; 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid #282828;
+    transition: all 0.3s ease-in-out;
 }
+
 .faq-item:hover { 
-    box-shadow: 0 12px 48px rgba(230,0,0,0.2); 
-    transform: translateY(-4px); 
-    border-color: rgba(230,0,0,0.3);
+    transform: translateY(-5px);
+    border-color: #444;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
 }
-.faq-question { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 24px; }
+
+.faq-question { 
+    display: flex; 
+    align-items: center; /* Вирівнюємо номер і текст по центру */
+    gap: 24px; 
+    margin-bottom: 24px; 
+}
+
 .faq-number { 
     font-size: 48px; 
     font-weight: 900; 
-    background: linear-gradient(135deg, rgba(230,0,0,0.3), rgba(230,0,0,0.1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--vodafone-red);
+    opacity: 0.4;
     line-height: 1; 
-    flex-shrink: 0; 
-}
-.faq-question h3 { font-size: 22px; font-weight: 700; color: #ffffff; line-height: 1.4; margin: 0; }
-.faq-answer { padding-left: 72px; color: #b0b0b0; font-size: 16px; line-height: 1.7; }
-.faq-answer p { margin-bottom: 12px; }
-.faq-answer strong { color: #ffffff; font-weight: 600; }
-.faq-answer ul li, .faq-answer ol li { margin-bottom: 12px; line-height: 1.6; }
-
-.timeline-section {
-    background: linear-gradient(180deg, #141414, #0a0a0a);
+    flex-shrink: 0;
+    /* Прибираємо градієнт, використовуємо простий колір */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background: none;
 }
 
-.timeline { max-width: 900px; margin: 60px auto 0; position: relative; }
-.timeline::before { 
-    content: ''; 
-    position: absolute; 
-    left: 40px; 
-    top: 40px; 
-    bottom: 40px; 
-    width: 3px; 
-    background: linear-gradient(180deg, var(--vodafone-red), #800000); 
-}
-.timeline-item { display: flex; gap: 40px; margin-bottom: 60px; }
-.timeline-marker { 
-    width: 80px; 
-    height: 80px; 
-    background: linear-gradient(135deg, var(--vodafone-red), #a00000); 
-    color: white; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 32px; 
-    font-weight: 900; 
-    box-shadow: 0 8px 32px rgba(230,0,0,0.5); 
-    z-index: 1; 
-    flex-shrink: 0; 
-    border: 3px solid #0a0a0a;
-}
-.timeline-content { 
-    flex: 1; 
-    background: linear-gradient(135deg, #1a1a1a, #141414); 
-    padding: 32px; 
-    border-radius: 16px; 
-    border: 1px solid rgba(255,255,255,0.08);
-}
-.timeline-content h3 {
-    color: #ffffff;
+.faq-question h3 { 
+    font-size: 24px; 
+    font-weight: 700; 
+    color: #f0f0f0; 
+    line-height: 1.4; 
+    margin: 0; 
 }
 
-.final-cta { 
-    background: linear-gradient(135deg, var(--vodafone-red), #900000); 
-    color: white; 
-    text-align: center; 
-    position: relative;
-    overflow: hidden;
-}
-.final-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 50%);
-    pointer-events: none;
-}
-.cta-primary-large { 
-    background: linear-gradient(135deg, #ffffff, #e0e0e0); 
-    color: var(--vodafone-red); 
-    padding: 24px 56px; 
-    border-radius: 12px; 
-    text-decoration: none; 
-    font-weight: 900; 
-    font-size: 20px; 
-    display: inline-block; 
-    box-shadow: 0 12px 48px rgba(0,0,0,0.3); 
-    transition: all 0.3s; 
-    position: relative;
-    z-index: 1;
-}
-.cta-primary-large:hover { 
-    transform: translateY(-4px); 
-    box-shadow: 0 16px 64px rgba(0,0,0,0.5);
+.faq-answer { 
+    padding-left: 72px; /* Відступ, щоб вирівняти з текстом питання */
+    color: #b0b0b0; 
+    font-size: 16px; 
+    line-height: 1.7; 
 }
 
-footer { 
-    background: linear-gradient(180deg, #0a0a0a, #000000); 
-    color: #808080; 
-    padding: 60px 0 30px; 
-    text-align: center; 
-    border-top: 1px solid rgba(255,255,255,0.05);
+.faq-answer p { 
+    margin-bottom: 12px; 
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-}
-.modal.active {
-    display: flex;
-}
-.modal.demo-modal .modal-content {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    width: 90%;
-    max-width: 400px;
-    height: 85vh;
-    max-height: 800px;
-    padding: 0;
-    overflow: visible;
+.faq-answer strong { 
+    color: #ffffff; 
+    font-weight: 600; 
 }
 
-.modal.demo-modal .modal-body {
-    background: #ffffff;
-    border-radius: 44px;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-    border: 8px solid #1c1c1e;
-    box-sizing: border-box;
+.faq-answer ul li, .faq-answer ol li { 
+    margin-bottom: 12px; 
+    line-height: 1.6; 
 }
 
-.modal.demo-modal .modal-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* Новий стиль для виділених блоків */
+.faq-highlight-box {
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 12px;
 }
 
-.modal.demo-modal .modal-header,
-.modal.demo-modal .modal-footer {
-    display: none;
+.faq-highlight-box p {
+    margin: 0;
+    color: #f0f0f0; /* Робимо текст трохи світлішим */
 }
 
-.modal-controls {
-    position: absolute;
-    top: -55px;
-    right: 0;
-    z-index: 10001;
-    display: flex;
-    gap: 12px;
-}
-
-.modal-controls button {
-    background: rgba(40, 40, 40, 0.7);
-    backdrop-filter: blur(5px);
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.modal-close {
-    font-size: 24px;
-    line-height: 1;
-}
-.modal-close:hover {
-    background: var(--vodafone-red);
-    transform: rotate(90deg);
-}
-
-.modal-refresh:hover {
-    background: var(--kyivstar-blue);
-    transform: rotate(-180deg);
-}
-.modal-controls button svg {
-    transition: transform 0.3s;
+/* Модифікатор для зеленого блоку */
+.faq-highlight-box.green {
+    background: linear-gradient(135deg, rgba(0, 214, 111, 0.08), rgba(0, 214, 111, 0.04));
+    border-left: 4px solid var(--success-green);
 }
 
 @media (max-width: 968px) {
-    h1 { font-size: 42px; }
-    .three-col-grid, .insight-cards, .cost-grid, .features-grid, .approach-grid { grid-template-columns: 1fr; }
-    .timeline::before { left: 30px; }
-    .timeline-marker { width: 60px; height: 60px; font-size: 24px; }
-    .faq-question { flex-direction: column; gap: 16px; }
-    .faq-number { font-size: 36px; }
-    .faq-answer { padding-left: 0; }
-}
-
-@media (max-width: 768px) {
-    .modal.demo-modal .modal-content {
-        width: 90%;
-        height: 80vh;
+    /* ... (існуючі медіа-запити) ... */
+    .faq-question { 
+        align-items: flex-start; /* На мобільних краще вирівнювання по верху */
+        flex-direction: row; 
     }
-    .modal-controls {
-        top: 0;
-        right: 0;
-        transform: translate(0, -120%);
-        background: rgba(255,255,255,0.1);
+    .faq-number { 
+        font-size: 36px; 
+    }
+    .faq-answer { 
+        padding-left: 0; 
+        margin-top: -16px; /* Трохи піднімаємо відповідь */
     }
 }
-
-
