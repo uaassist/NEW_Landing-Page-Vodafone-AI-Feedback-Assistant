@@ -237,6 +237,7 @@ section { padding: 80px 0; position: relative; }
     background: rgba(66,133,244,0.15);
     color: #8ab4f8;
     font-weight: 600;
+    white-space: nowrap; /* <-- ADD THIS LINE */
 }
 .rating-display {
     display: flex;
@@ -953,3 +954,4 @@ footer {
     font-size: 64px;
     font-weight: 900;
 }
+
