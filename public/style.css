@@ -814,12 +814,12 @@ footer {
     border: none;
     box-shadow: none;
     width: 90%;
-    max-width: 550px;
+    max-width: 400px;
     height: 85vh;
     max-height: 800px;
     padding: 0;
     overflow: visible;
-    position: relative; /* <-- THE FIX IS HERE */
+    position: relative;
 }
 
 .modal.demo-modal .modal-body {
@@ -919,6 +919,37 @@ footer {
     }
 }
 
+/* --- NEW: Success Green Highlight Styles --- */
 
+.text-success {
+    background: linear-gradient(135deg, var(--success-green), #00b058);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
 
+.hero-subtitle .text-success {
+    color: var(--success-green); /* Simpler override for smaller text */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
 
+.impact-value.positive {
+    background: linear-gradient(135deg, var(--success-green), #00b058);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cost-card .cost-amount.text-success,
+.final-cta .text-success {
+    background: linear-gradient(135deg, #ffffff, #c0e0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cost-card .cost-amount.text-success {
+    font-size: 64px;
+    font-weight: 900;
+}
