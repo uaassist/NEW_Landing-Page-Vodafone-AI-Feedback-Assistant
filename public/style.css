@@ -954,4 +954,10 @@ footer {
     font-size: 64px;
     font-weight: 900;
 }
+/* --- Style for new insight card metrics --- */
+.insight-metric.positive {
+    background: linear-gradient(135deg, var(--success-green), #00b058);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
