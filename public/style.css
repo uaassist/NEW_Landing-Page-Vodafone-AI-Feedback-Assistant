@@ -237,7 +237,7 @@ section { padding: 80px 0; position: relative; }
     background: rgba(66,133,244,0.15);
     color: #8ab4f8;
     font-weight: 600;
-    white-space: nowrap;
+    white-space: nowrap; /* <-- ADD THIS LINE */
 }
 .rating-display {
     display: flex;
@@ -920,7 +920,7 @@ footer {
     }
 }
 
-/* --- Green Highlight Styles --- */
+/* --- NEW: Success Green Highlight Styles --- */
 
 .text-success {
     background: linear-gradient(135deg, var(--success-green), #00b058);
@@ -954,61 +954,9 @@ footer {
     font-size: 64px;
     font-weight: 900;
 }
-
-/* --- Spotlight Solution Section Styles --- */
-
-.solution-section {
-    background: #f4f4f7;
-    padding-top: 180px;
-    padding-bottom: 180px;
-    position: relative;
-    color: #555;
-    z-index: 5; /* Add z-index to ensure it sits above other elements */
-}
-
-.solution-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M1440,100 C1200,100 960,33 720,33 C480,33 240,100 0,100 L0,0 L1440,0 Z' style='fill:%230a0a0a; stroke:none;'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    transform: translateY(-99%); 
-}
-
-.solution-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C240,0 480,67 720,67 C960,67 1200,0 1440,0 L1440,100 L0,100 Z' style='fill:%23f4f4f7; stroke:none;'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    transform: translateY(99%); 
-}
-
-.solution-section .section-title {
-    color: #111;
-    background: none;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-}
-
-.solution-section .section-subtitle {
-    color: #666;
-}
-
-.solution-section .feature-card {
-    border-color: rgba(0,0,0,0.1);
-}
-.solution-section .feature-card:hover {
-    border-color: var(--vodafone-red);
-    box-shadow: 0 24px 64px rgba(230,0,0,0.3);
+/* --- Style for new insight card metrics --- */
+.insight-metric.positive {
+    background: linear-gradient(135deg, var(--success-green), #00b058);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
