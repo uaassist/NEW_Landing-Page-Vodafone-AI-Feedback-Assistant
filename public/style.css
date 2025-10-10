@@ -237,7 +237,7 @@ section { padding: 80px 0; position: relative; }
     background: rgba(66,133,244,0.15);
     color: #8ab4f8;
     font-weight: 600;
-    white-space: nowrap; /* <-- ADD THIS LINE */
+    white-space: nowrap;
 }
 .rating-display {
     display: flex;
@@ -378,6 +378,16 @@ section { padding: 80px 0; position: relative; }
 .insight-card p {
     position: relative;
     z-index: 1;
+}
+
+.solution-spotlight-section {
+    padding: 120px 0;
+    position: relative;
+    background-color: #0a0a0a;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(230, 0, 0, 0.15), transparent 70%);
+    border-top: 1px solid rgba(230, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(230, 0, 0, 0.2);
+    box-shadow: inset 0 10px 40px rgba(0,0,0,0.4), inset 0 -10px 40px rgba(0,0,0,0.4);
 }
 
 .features-grid {
@@ -918,20 +928,48 @@ footer {
     .modal-controls button {
         background: rgba(255,255,255,0.1);
     }
+
+    /* --- NEW: Mobile View Polish (Hero & Header) --- */
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        line-height: 1.2;
+    }
+
+    .crisis-badge {
+        padding: 10px 20px;
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .logo img {
+        height: 28px;
+    }
 }
 
-/* --- NEW: Success Green Highlight Styles --- */
+/* --- Green Highlight Styles --- */
 
 .text-success {
     background: linear-gradient(135deg, var(--success-green), #00b058);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; /* Fallback */
+    color: transparent;
 }
 
 .hero-subtitle .text-success {
-    color: var(--success-green); /* Simpler override for smaller text */
+    color: var(--success-green);
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
@@ -954,21 +992,3 @@ footer {
     font-size: 64px;
     font-weight: 900;
 }
-/* --- Style for new insight card metrics --- */
-.insight-metric.positive {
-    background: linear-gradient(135deg, var(--success-green), #00b058);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-/* --- NEW: Spotlight Section for the Solution --- */
-
-.solution-spotlight-section {
-    padding: 120px 0; /* Increased vertical spacing */
-    position: relative;
-    background-color: #0a0a0a; /* Base dark background */
-    background-image: radial-gradient(ellipse at 50% 0%, rgba(230, 0, 0, 0.15), transparent 70%); /* Red glow from the top */
-    border-top: 1px solid rgba(230, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(230, 0, 0, 0.2);
-    box-shadow: inset 0 10px 40px rgba(0,0,0,0.4), inset 0 -10px 40px rgba(0,0,0,0.4);
-}
-
