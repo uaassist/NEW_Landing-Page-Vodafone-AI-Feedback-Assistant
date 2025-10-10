@@ -929,7 +929,7 @@ footer {
         background: rgba(255,255,255,0.1);
     }
 
-    /* --- NEW: Mobile View Polish (Hero & Header) --- */
+    /* --- Mobile View Polish (Hero & Header) --- */
     .hero-section {
         padding: 60px 0;
     }
@@ -955,6 +955,30 @@ footer {
 
     .logo img {
         height: 28px;
+    }
+
+    /* --- NEW: Adjust section titles and other headlines for mobile --- */
+    .section-title {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .final-cta h2 {
+        font-size: 38px;
+    }
+
+    .feature-card h3,
+    .approach-card h3,
+    .timeline-content h3,
+    .cost-card h3,
+    .faq-question h3 {
+        font-size: 22px;
     }
 }
 
